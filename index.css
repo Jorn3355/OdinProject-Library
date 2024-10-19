@@ -14,8 +14,10 @@ header {
 }
 
 .wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     margin: 0px auto;
-    text-align: center;
 }
 
 .book-container {
@@ -41,13 +43,37 @@ header {
 }
 
 .popup {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 40%;
+    width: 20%;
+    border: 2px solid black;
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
     visibility: hidden;
     opacity: 0;
+    transition: 0.5s;   
+}
+
+.popup > input {
+    width: 80%;
+    Font-size: inherit;
+}
+
+input[type="text"]{
+    padding: 0.5rem;
+}
+
+
+
+.popup.active {
+    visibility: visible;
+    opacity: 1;
     transition: 0.5s;
 }
 
@@ -63,8 +89,13 @@ header {
     font-weight: bold;
 }
 
-.read, .unread {
-    border: 2px solid lightslategrey;
+button.read, button.unread {
+    font-size: inherit;
+}
+
+.read,
+.unread {
+    border: 2px solid black;
     text-align: center;
     margin: 5px 0px;
 }
@@ -83,13 +114,25 @@ header {
     text-align: center;
 }
 
+.read:hover,
+.read:active {
+    background: #00cc00;
+}
+
+.not-read:hover, 
+.not-read:active, 
+.rm-btn:hover,
+.rm-btn:active 
+{
+    background: #ff7070;
+}
+
 .blur {
     filter: blur(20px);
     pointer-events: none;
     user-select: none;
+    transition: 0.2s;
 }
-
-body.blur
 
 #add-book {
     background: white;
@@ -104,4 +147,22 @@ body.blur
 
 #add-book:active, #add-book:hover {
     background: lightgrey;
+}
+
+#popup-submit {
+    max-width: 40%;
+    background: black;
+    color: white;
+    font-size: inherit;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#read {
+    transform: scale(2);
+}
+
+[for="read"] {
+    font-size: 1.5rem;
 }

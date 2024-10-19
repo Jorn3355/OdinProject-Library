@@ -11,15 +11,6 @@
        Digital Library Archive
     </header>
     <main>
-        <form class="popup">
-            <label for="title">Title</label>
-            <input id="title" type="text">
-            <label for="author"></label>
-            <input id="author" type="text">
-            <label id="author" for=""></label>
-            <input id="read" type="checkbox">
-            <label id="read" for=""></label>
-        </form>
         <div class="wrapper">
             <button id="add-book">
                 Add a Book
@@ -27,6 +18,12 @@
         </div>
         <div class="book-container"></div>
     </main>
+    <form class="popup">
+        <input id="title" type="text" placeholder="Title">
+        <input id="author" type="text" placeholder="Author">
+        <div class="wrapper"><label for="read">Read?</label><input id="read" type="checkbox"></div>
+        <button id="popup-submit" type="submit">Submit</button>
+    </form>
     <script src="./index.js"></script>
 </body>
 </html>
